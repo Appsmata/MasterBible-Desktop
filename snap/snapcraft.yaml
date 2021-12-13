@@ -1,0 +1,53 @@
+name: songbook 
+version: '1.0.0.2' 
+summary: Freedom to Sing Anywhere, Anytime.
+description: |
+  vSongBook is an application that gives users access to songs sung in church services among other places where praise and worship is carried out. Major songbooks include Songs of Worship, Nyimbo za Injili, Believers Songs, Redemption Songs and Tenzi za Rohoni. Other songbooks in various local dialects have been added over time and more are under way to be added.
+icon: src/res/icons/appicon.png
+
+base: core
+grade: stable
+confinement: strict
+
+architectures:
+  - build-on: amd64
+
+apps:
+  songbook:
+    command: desktop-launch $SNAP/opt/myapp/songbook
+    common-id: org.songbook.desktop
+    plugs: 
+      - home
+      - network
+      - network-manager-observe
+      - unity7
+      - x11
+
+build-packages:
+    - build-essential
+    - g++
+    - qtbase5-dev
+    - qttools5-dev
+    - qttools5-dev-tools
+    - libsqlite3-dev
+    - qmake
+    - git
+
+parts:
+  project:
+    plugin: qmake
+    source: .
+    qt-version: qt5
+    project-files: [songbook.pro]
+    override-build: |
+      install -d $SNAPCRAFT_PART_INSTALL/opt/myapp
+      install songbook $SNAPCRAFT_PART_INSTALL/opt/myapp/songbook
+
+  integration:
+    plugin: nil
+    stage-packages:
+     - libc6
+     - libstdc++6
+     - libc-bin
+     - libsqlite3-0  
+    after: [desktop-qt5]

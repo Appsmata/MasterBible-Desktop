@@ -1,74 +1,83 @@
-Makefile
-.qmake.stash
-CMakeCache.txt
-CMakeLists.txt.user
-CMakeFiles
-*.cmake
-*.cpp_parameters
+# This file is used to ignore files which are generated
+# ----------------------------------------------------------------------------
+
+src/.vs/
+src/debug/
+src/release/
+src/ui_*.h
+build/
+build-*
+build_*
+snap/parts
+snap/prime
+snap/snap
+snap/stage
+*~
+*.autosave
+*.a
+*.core
 *.db
-*.suo
-*.sln
 *.moc
+*.o
 *.obj
-*.pdp
-*.dll
-*.lib
-*.exe
-*.log
-*.tlog
-*.opendb
-*.vcxproj
-*.vcxproj.user
-*.vcxproj.filters
-*.cxx_parameters
-cmake*.cmake
-install_*.txt
-qrc_*.cpp
-moc_*.cpp
-mocs_*.cpp
-ui_*.cpp
-ui_*.h
-*.ipch
-Solution.VC.*
-
-# ignore any build folders
-build*/
-# folder with temporary test data
-testdata/
-x64/
-win32/
-Debug/
-CMakeFiles/
-vsongbook.dir/
-vsongbook_autogen/
-
-Release/*.dll
-publish/outputs/*.exe
-src/.ui/
-src/vsongbook
-src/Makefile*
-src/debug
-src/release
-src/gen_version.h
-
-# ignore compiled translation files
-src/translations/*.qm
-
-# ignore compiled macOS app
-src/*.app/
-
-# no one needs the txt file
-src/grammar/sqlite3TokenTypes.txt
-
-libs/*/Makefile*
-libs/*/*/Makefile*
-libs/*/debug/
-libs/*/*/debug/
-libs/*/release/
-libs/*/*/release/
-libs/*/*.a
-libs/*/*/*.a
-
-# Ignore .DS_Store files on OSX
+*.orig
+*.rej
+*.so
+*.so.*
+*_pch.h.cpp
+*_resource.rc
+*.qm
+.#*
+*.*#
+core
+!core/
+tags
 .DS_Store
-mbible.pro.user.18d33b5
+.directory
+*.debug
+Makefile*
+*.prl
+*.app
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+Thumbs.db
+*.res
+*.rc
+/.qmake.cache
+/.qmake.stash
+
+# qtcreator generated files
+#*.pro.user*
+
+# xemacs temporary files
+*.flc
+
+# Vim temporary files
+.*.swp
+
+# Visual Studio generated files
+*.ib_pdb_index
+*.idb
+*.ilk
+*.pdb
+*.suo
+*vcproj.*.*.user
+*.ncb
+*.sdf
+*.opensdf
+*vcxproj.*
+
+# MinGW generated files
+*.Debug
+*.Release
+
+# Python byte code
+*.pyc
+
+# Binaries
+# --------
+*.dll
+*.exe
+
+*.user
