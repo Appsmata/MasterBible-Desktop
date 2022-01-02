@@ -610,8 +610,6 @@ QComboBox::down-arrow {
     height: 20px;
     right: 10px;
     margin: 3px;
-    background: #ffffff;
-    border-radius: 5px;
     image: url(:/themes/black/add_bottom.png);
 }
     

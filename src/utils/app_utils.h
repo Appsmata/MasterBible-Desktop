@@ -6,10 +6,10 @@
 class AppUtils
 {
 public:
-    static QString appName() { return "vSongBook"; }
-    static QString appVersion() { return "3.1.2"; }
+    static QString appName() { return "mBible"; }
+    static QString appVersion() { return "1.0.2"; }
     static QString orgName() { return "Appsmata Solutions"; }
-    static QString orgDomain() { return "vsongbook.appsmata.com"; }
+    static QString orgDomain() { return "mbible.appsmata.com"; }
 
     static QString replaceList(QString text)
     {

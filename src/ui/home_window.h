@@ -5,7 +5,7 @@
 
 #include "../data/app_database.h"
 #include "../data/models/book.h"
-#include "../data/models/song.h"
+#include "../data/models/verse.h"
 
 namespace Ui {
 class HomeWindow;
@@ -30,24 +30,26 @@ private slots:
     void fontSmaller();
     void fontBigger();
 
-    bool populateSongbooks();
-    void populateSongLists(size_t book);
-    void populateSongSearch(QString SearchStr);
-    void searchSonglists(QString SearchStr);
-    void filterSonglists();
-
-    void openSongPreview(const QModelIndex& selected);
-
     void on_txtSearch_textChanged(const QString& arg1);
     void on_txtSearch_returnPressed();
-    void on_cmbSongbooks_currentIndexChanged(int index);
+    void on_cmbLanguages_currentIndexChanged(const QString& arg1);
     void on_lstResults_clicked(const QModelIndex& index);
     void on_lstResults_doubleClicked(const QModelIndex& index);
+    void on_chkNewTestament_stateChanged(int arg1);
+    void on_chkOldTestament_stateChanged(int arg1);
+    void on_cmbChapter_currentIndexChanged(const QString& arg1);
+
+    void nextChapter();
+    void previousChapter();
+    void searchBible(QString Searchstr);
+    void gotoReading();
+    void getReading(const QModelIndex& selected);
+    void openReading();
 
     void on_menuPrint_triggered();
     void on_menuExit_triggered();
-    void on_menuNewSong_triggered();
-    void on_menuEditSong_triggered();
+    void on_menuNewVerse_triggered();
+    void on_menuEditVerse_triggered();
     void on_menuBooks_triggered();
     void on_menuPresent_triggered();
     void on_menuManageSettings_triggered();

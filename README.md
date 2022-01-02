@@ -1,21 +1,31 @@
-# vSongBook on Your PC!!!  v3.0.3
-### FREEDOM TO SING ANYWHERE ANYTIME
-![vSongBook Screenshot](https://github.com/Appsmata/vSongBook-Desktop/raw/master/images/screenshot1.png "vSongBook Screenshot 1")
+# The Bible made simple!
+![mBible Screenshot](https://github.com/Appsmata/mBible4PC/raw/master/images/screenshot1.png "mBible Screenshot")
 
-## What is vSongBook?
- ... it's an application that gives users access to songs sung in church services among other places where praise and worship is carried out. Major songbooks include Songs of Worship, Nyimbo za Injili, Believers Songs, Redemption Songs and Tenzi za Rohoni. Other songbooks in various local dialects have been added over time and more are under way to be added.
+## What it is
 
-## What it is not ...
-... this is not a media player or tutor utility if you don't know how to sing a particular song. Be sure you know to sing most or all of the songs in it, otherwise feel free to customize the songs you want it have for you.
+_mBible_ (Master Bible) is a high quality, visual, open source tool to give users access to the Holy Bible in English and Kiswahili.
+
+Controls and wizards are available for users to:
+
+* Search verses realtime
+* Open scriptures real fast and easily
+* Switch between languages
+* Adjust font types and sizes among other display preferences
 
 ## Useful Links
 
-* Get the latest Downloads: https://Appsmata.com/vSongBook/
+* Get the latest Downloads: https://Appsmata.com/mBible/
 * Follow us on Facebook: https://twitter.com/AppSmata
 * Follow us on Twitter: https://twitter.com/AppSmata
 * Follow us on Instagram: https://twitter.com/AppSmata
 
 ## Releases
 
-* [Version 3.0.2 released](https://github.com/Appsmata/vSongBook-Desktop/releases/tag/v3.0.2) - 2021-10-15
-* [Version 3.0.1 released](https://github.com/Appsmata/vSongBook-Desktop/releases/tag/v3.0.1) - 2021-05-29
+* [Version 0.0.6 released](https://github.com/Appsmata/mBible4PC/releases/tag/v0.0.6) - 2020-24-03
+
+## License
+
+mBible is bi-licensed under the Mozilla Public License
+Version 2, as well as the GNU General Public License Version 3 or later.
+
+Modification or redistribution is permitted under the conditions of these licenses.

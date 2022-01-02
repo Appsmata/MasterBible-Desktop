@@ -5,12 +5,12 @@
 #include "../utils/app_utils.h"
 #include "../utils/pref_utils.h"
 
-int presentorTheme, presentorFontSize, presentorFontType, presenterSong, slides, slideno, slideIndex;
-std::vector<QString> songverses1, songverses2, labels;
+int presentorTheme, presentorFontSize, presentorFontType, presenterVerse, slides, slideno, slideIndex;
+std::vector<QString> verseverses1, verseverses2, labels;
 QFont generalFont, presentorFont;
 bool tabletMode, hasChorus, presentorFontBold;
 QString userName, slide, chorus;
-Song song;
+Verse verse;
 QIcon iconSmaller, iconBigger, iconDown, iconUp;
 
 QSettings presPrefs(AppUtils::appName(), AppUtils::orgDomain());
@@ -32,7 +32,7 @@ void PresentorWindow::loadSettings()
 {
 	tabletMode = presPrefs.value(PrefUtils::prefsTabletMode()).toBool();
 	userName = presPrefs.value(PrefUtils::prefsAppUser()).toString();
-	presenterSong = presPrefs.value(PrefUtils::prefsSelectedSong()).toInt();
+	//presenterVerse = presPrefs.value(PrefUtils::prefsSelectedVerse()).toInt();
 	presentorTheme = presPrefs.value(PrefUtils::prefsPresentTheme()).toInt();
 
 	presentorFontBold = presPrefs.value(PrefUtils::prefsPresentFontBold()).toBool();
@@ -198,7 +198,7 @@ void PresentorWindow::loadControls()
 {
 	ui->lblTitle->setFont(presentorFont);
 	ui->lblContent->setFont(presentorFont);
-	ui->lblSongbook->setFont(presentorFont);
+	//ui->lblVersebook->setFont(presentorFont);
 	ui->lblAuthor->setFont(presentorFont);
 	ui->lblVerse->setFont(presentorFont);
 	loadTheme();
@@ -206,25 +206,25 @@ void PresentorWindow::loadControls()
 
 void PresentorWindow::requestData()
 {
-	if (presenterSong > 0)
+	if (presenterVerse > 0)
 	{
-		appDb->connectionOpen("present_song");
-		song = appDb->fetchSong(presenterSong);
-		appDb->connectionClose("present_song");
-		if (song.title.length() > 0) presentSong();
+		appDb->connectionOpen("present_verse");
+		// = appDb->fetchVerse(presenterVerse);
+		appDb->connectionClose("present_verse");
+		if (verse.title.length() > 0) presentVerse();
 	}
 }
 
-void PresentorWindow::presentSong()
+void PresentorWindow::presentVerse()
 {
 	slides = 0;
-	if (songverses1.size() > 0) songverses1.clear();
-	if (songverses2.size() > 0) songverses2.clear();
+	if (verseverses1.size() > 0) verseverses1.clear();
+	if (verseverses2.size() > 0) verseverses2.clear();
 
-	if (song.content.contains("CHORUS")) hasChorus = true;
+	if (verse.content.contains("CHORUS")) hasChorus = true;
 	else hasChorus = false;
 
-	QStringList tokens = song.content.split("\\n\\n");
+	QStringList tokens = verse.content.split("\\n\\n");
 
 	if (tokens.length() > 1)
 	{
@@ -234,29 +234,29 @@ void PresentorWindow::presentSong()
 			if (hasChorus)
 			{
 				if (token.contains("CHORUS")) chorus = token.replace("CHORUS\\n", "");
-				else songverses1.push_back(token);
+				else verseverses1.push_back(token);
 			}
-			else songverses2.push_back(token);
+			else verseverses2.push_back(token);
 		}
 	}
 
 	if (hasChorus)
 	{
 		int k = 1;
-		for (std::vector<QString>::iterator i = songverses1.begin(); i != songverses1.end(); ++i)
+		for (std::vector<QString>::iterator i = verseverses1.begin(); i != verseverses1.end(); ++i)
 		{
-			songverses2.push_back(*i);
-			songverses2.push_back(chorus);
+			verseverses2.push_back(*i);
+			verseverses2.push_back(chorus);
 			slides = slides + 2;
 
 			QString label = "VERSE " + QString::number(k);
-			label.append(" / " + QString::number(songverses1.size()));
+			label.append(" / " + QString::number(verseverses1.size()));
 			labels.push_back(label);
 			labels.push_back("CHORUS ");
 			k++;
 		}
 	}
-	else slides = songverses2.size();
+	else slides = verseverses2.size();
 	slideIndex = 0;
 	setPresentation();
 }
@@ -264,18 +264,18 @@ void PresentorWindow::presentSong()
 void PresentorWindow::setPresentation()
 {
 	slideno = slideIndex + 1;
-	slide = songverses2[slideIndex];
-	ui->lblTitle->setText(AppUtils::replaceView(QString::number(song.number) + "# " + song.title));
+	slide = verseverses2[slideIndex];
+	/*ui->lblTitle->setText(AppUtils::replaceView(QString::number(verse.number) + "# " + verse.title));
 	ui->lblContent->setText(AppUtils::replaceView(slide));
-    if (song.author.size() < 2)
+    if (verse.author.size() < 2)
         ui->lblAuthor->setText("Public Domain");
     else
-        ui->lblAuthor->setText(song.author);
+        ui->lblAuthor->setText(verse.author);
 
-    ui->lblKey->setText("Key: " + song.key);
+    ui->lblKey->setText("Key: " + verse.key);
 
-	ui->lblSongbook->setText(song.book);
-	ui->lblVerse->setText(labels[slideIndex]);
+	ui->lblVersebook->setText(verse.book);
+	ui->lblVerse->setText(labels[slideIndex]);*/
 
     if (slideIndex == 0)
 	{
@@ -313,7 +313,7 @@ void PresentorWindow::themeChange()
 	loadControls();
 }
 
-// Changing of font of the song present
+// Changing of font of the verse present
 void PresentorWindow::fontChange()
 {
 	switch (presentorFontType)

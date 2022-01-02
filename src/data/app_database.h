@@ -9,7 +9,7 @@
 #include <QStandardItemModel>
 
 #include "models/book.h"
-#include "models/song.h"
+#include "models/verse.h"
 
 // Application Database
 class AppDatabase : public QObject
@@ -27,16 +27,14 @@ public:
     void initDbOperations();
 
     int addBook(Book* book);
-    int addSong(Song* song);
+    int addVerse(Verse* verse, int language);
 
     QString sqlSafe(QString value);
 
-    Song fetchSong(int songid);
-    Song fetchSongDetails(int songid);
     Book fetchBook(int bookid);
 
     std::vector<Book> fetchBooks();
-    std::vector<Song> fetchSongs();
+    std::vector<Verse> fetchVerses();
 
     QString getValueOrDefault(QString key, QString defaultValue);
     void addValue(QString key, QString value);

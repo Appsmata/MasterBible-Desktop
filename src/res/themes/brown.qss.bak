@@ -2,7 +2,7 @@
 /* QMenuBar */
 
 QMenuBar {
-    background-color: #F0B27A;
+    background-color: #ff7700;
     font-weight: bold;
 }
     
@@ -12,11 +12,11 @@ QMenuBar::item {
     
 QMenuBar::item:selected, QMenuBar::item:pressed {
     background-color: #ffffff;
-    color: #F0B27A;
+    color: #ff7700;
 }
     
 QMenuBar::item:disabled, QMenuBar::item:disabled:hover, QMenuBar::item:disabled:pressed {
-    background-color: #F0B27A;
+    background-color: #ff7700;
     color: #000000;
 }
     
@@ -54,7 +54,7 @@ QMenu::separator {
     
 QToolBar {
     border-radius: 3px;
-    background-color: #F0B27A;
+    background-color: #ff7700;
 }
     
 QToolBar QToolButton {

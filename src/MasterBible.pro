@@ -13,7 +13,7 @@ SOURCES += \
     data/delegates/book_delegate.cpp \
     data/delegates/listdelegate.cpp \
     data/delegates/pref_delegate.cpp \
-    data/delegates/song_delegate.cpp \
+    data/delegates/verse_delegate.cpp \
     main.cpp \
     ui/dialogs/app_about.cpp \
     ui/dialogs/app_hints.cpp \
@@ -28,13 +28,14 @@ HEADERS += \
     data/delegates/book_delegate.h \
     data/delegates/listdelegate.h \
     data/delegates/pref_delegate.h \
-    data/delegates/song_delegate.h \
+    data/delegates/verse_delegate.h \
     data/models/book.h \
     data/models/history.h \
     data/models/list_item.h \
     data/models/preference.h \
     data/models/search.h \
     data/models/song.h \
+    data/models/verse.h \
     services/app_preference.h \
     services/exception.h \
     services/task.h \

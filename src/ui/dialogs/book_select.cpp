@@ -133,7 +133,7 @@ void BookSelect::showProgress(bool show)
 
 void BookSelect::createListView()
 {
-    BookDelegate* bookDelegate = new BookDelegate(this);
+    //BookDelegate* bookDelegate = new BookDelegate(this);
     //ui->LstBooks->setItemDelegate(bookDelegate);
 	ui->LstBooks->setModel(bookModel);
 	ui->LstBooks->setViewMode(QListView::ListMode);
@@ -203,12 +203,12 @@ void BookSelect::loadSongs()
 	int bid = books.toInt() - 1;
 
 	Book* book = new Book();
-	book->title = titles[bid];
-	book->categoryid = catids[bid].toInt();
+    book->title = titles[bid];
+    /*book->categoryid = catids[bid].toInt();
 	book->tags = tags[bid];
 	book->content = contents[bid];
 	book->qcount = songnos[bid].toInt();
-	book->enabled = 1;
+    book->enabled = 1;*/
 	appDb->addBook(book);
 
 	if (selecteds.size() > 1)
@@ -219,11 +219,11 @@ void BookSelect::loadSongs()
 			int bid = selecteds[i].toInt() - 1;
 			Book* book = new Book();
 			book->title = titles[bid];
-			book->categoryid = catids[bid].toInt();
+            /*book->categoryid = catids[bid].toInt();
 			book->tags = tags[bid];
 			book->content = contents[bid];
 			book->qcount = songnos[bid].toInt();
-			book->enabled = 1;
+            book->enabled = 1;*/
 			appDb->addBook(book);
 		}
 	}
@@ -248,7 +248,7 @@ QString insertSongs()
 	foreach(const QJsonValue & value, jsonArray)
 	{
 		QJsonObject obj = value.toObject();
-		Song* song = new Song();
+        /*Song* song = new Song();
 
 		song->bookid = obj["categoryid"].toInt();
 		song->categoryid = obj["categoryid"].toInt();
@@ -265,7 +265,7 @@ QString insertSongs()
 		song->content = song->content.replace("\n", "\\n");
 		song->content = song->content.replace("'", "''");
 
-		int newSong = appDb->addSong(song);
+        int newSong = appDb->addSong(song);*/
 	}
 	appDb->connectionClose("NewSongs");
 	return "Task Finished";

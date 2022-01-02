@@ -27,7 +27,8 @@ public:
     static QString prefsPreviewFontType() { return "preview/font_type"; }
     static QString prefsSearchAllbooks() { return "general/search_all_books"; }
     static QString prefsSelectedBook() { return "general/selected_book"; }
-    static QString prefsSelectedSong() { return "general/selected_song"; }
+    static QString prefsSelectedChapter() { return "general/selected_chapter"; }
+    static QString prefsSelectedLanguage() { return "general/selected_language"; }
     static QString prefsShowHelpFirst() { return "general/show_help_first"; }
     static QString prefsShowStartpage() { return "general/show_startpage"; }
     static QString prefsTabletMode() { return "general/tablet_mode"; }

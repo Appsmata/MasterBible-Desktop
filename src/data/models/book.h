@@ -5,16 +5,11 @@
 
 struct Book {
     int bookid;
-    int categoryid;
-    int enabled;
+    int testament;
+    QString code;
     QString title;
-    QString tags;
-    int qcount;
-    int position;
-    QString content;
-    QString backpath;
-    QString created;
-    QString updated;
+    int chapters;
+    QString swahili;
 };
 
 Q_DECLARE_METATYPE(Book)

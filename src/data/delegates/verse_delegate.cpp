@@ -5,23 +5,23 @@
 #include <QEvent>
 #include <QDebug>
 
-#include "song_delegate.h"
-#include "data/models/song.h"
+#include "verse_delegate.h"
+#include "data/models/verse.h"
 #include "utils/app_utils.h"
 
-SongDelegate::SongDelegate(QObject* parent) : QStyledItemDelegate(parent) { }
+VerseDelegete::VerseDelegete(QObject* parent) : QStyledItemDelegate(parent) { }
 
-SongDelegate::~SongDelegate()
+VerseDelegete::~VerseDelegete()
 {
 
 }
 
-void SongDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
+void VerseDelegete::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
 	if (index.isValid()) {
 		painter->save();
 		QVariant var = index.data(Qt::UserRole + 1);
-		Song song = var.value<Song>();
+        Verse verse = var.value<Verse>();
 
 		// item Rectangular area
 		QRectF rect;
@@ -65,17 +65,17 @@ void SongDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, 
 
 		painter->setPen(QPen(QColor(Qt::black)));
 		painter->setFont(QFont("Trebuchet MS", 14, QFont::Bold));
-        painter->drawText(itemText1, AppUtils::replaceView(QString::number(song.number) + ". " + song.title));
+        painter->drawText(itemText1, AppUtils::replaceView(verse.title));
 
 		painter->setPen(QPen(Qt::black));
 		painter->setFont(QFont("Trebuchet MS", 12, 0));
-        painter->drawText(itemText2, AppUtils::replaceView(song.content));
+        painter->drawText(itemText2, AppUtils::replaceView(verse.content));
 
 		painter->restore();
 	}
 }
 
-QSize SongDelegate::sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const
+QSize VerseDelegete::sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
 	Q_UNUSED(index)
 		return QSize(option.rect.width(), 50);

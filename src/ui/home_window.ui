@@ -25,7 +25,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
-     <widget class="QSplitter" name="SplitterMain">
+     <widget class="QSplitter" name="splitterMain">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
         <horstretch>0</horstretch>
@@ -97,58 +97,8 @@
             </property>
             <item>
              <widget class="QLineEdit" name="txtSearch">
-              <property name="minimumSize">
-               <size>
-                <width>400</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Trebuchet MS</family>
-                <pointsize>12</pointsize>
-               </font>
-              </property>
-              <property name="placeholderText">
-               <string>Search for a Song</string>
-              </property>
-              <property name="clearButtonEnabled">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QComboBox" name="cmbSongbooks">
-              <property name="font">
-               <font>
-                <family>Trebuchet MS</family>
-                <pointsize>20</pointsize>
-               </font>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QCheckBox" name="chkSearchCriteria">
-              <property name="font">
-               <font>
-                <family>Trebuchet MS</family>
-                <pointsize>12</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Search All Song Books</string>
-              </property>
-              <property name="checked">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QListView" name="lstResults">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -156,11 +106,93 @@
               <property name="font">
                <font>
                 <family>Trebuchet MS</family>
-                <pointsize>12</pointsize>
+                <pointsize>15</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
                </font>
               </property>
+              <property name="placeholderText">
+               <string>Search in the Bible</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout1">
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string>LANGUAGE: </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="cmbLanguages">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="currentText">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout2">
+              <item>
+               <widget class="QCheckBox" name="chkOldTestament">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Old Testament [OT]</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="chkNewTestament">
+                <property name="text">
+                 <string>New Testament [NT]</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblResult">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>0 results found</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QListView" name="lstResults">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="horizontalScrollBarPolicy">
-               <enum>Qt::ScrollBarAlwaysOn</enum>
+               <enum>Qt::ScrollBarAlwaysOff</enum>
               </property>
              </widget>
             </item>
@@ -181,47 +213,120 @@
          <number>0</number>
         </property>
         <item>
-         <widget class="QToolBar" name="toolBar">
-          <property name="windowTitle">
-           <string>toolBar</string>
-          </property>
-          <addaction name="toolbarPresent"/>
-          <addaction name="separator"/>
-          <addaction name="toolbarEdit"/>
-          <addaction name="separator"/>
-          <addaction name="toolbarPrevious"/>
-          <addaction name="separator"/>
-          <addaction name="toolbarNext"/>
-          <addaction name="separator"/>
-          <addaction name="toolbarSmaller"/>
-          <addaction name="separator"/>
-          <addaction name="toolbarBigger"/>
-          <addaction name="separator"/>
-          <addaction name="toolbarBold"/>
-          <addaction name="separator"/>
-          <addaction name="toolbarSettings"/>
-          <addaction name="separator"/>
-          <addaction name="actionDarkMode"/>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="txtTitle">
-          <property name="font">
-           <font>
-            <family>Trebuchet MS</family>
-            <pointsize>20</pointsize>
-           </font>
-          </property>
-          <property name="frame">
-           <bool>true</bool>
-          </property>
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-          <property name="placeholderText">
-           <string>Song Title</string>
-          </property>
-         </widget>
+         <layout class="QHBoxLayout" name="topLayout">
+          <item>
+           <widget class="QLineEdit" name="txtTitle">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <family>Trebuchet MS</family>
+              <pointsize>18</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblChapter">
+            <property name="text">
+             <string>CHAPTER:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="cmbChapter">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Trebuchet MS</family>
+              <pointsize>15</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblVerse">
+            <property name="text">
+             <string>VERSE:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="cmbVerse">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Trebuchet MS</family>
+              <pointsize>15</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="currentText">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolBar" name="toolBarTop">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="windowTitle">
+             <string notr="true">toolBar1</string>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+            <addaction name="toolbarPresent"/>
+            <addaction name="separator"/>
+            <addaction name="toolbarPrevious"/>
+            <addaction name="toolbarNext"/>
+           </widget>
+          </item>
+         </layout>
         </item>
         <item>
          <widget class="QPlainTextEdit" name="txtContent">
@@ -240,25 +345,21 @@
           <property name="readOnly">
            <bool>true</bool>
           </property>
-          <property name="placeholderText">
-           <string>Song Content</string>
-          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="txtAlias">
-          <property name="font">
-           <font>
-            <family>Trebuchet MS</family>
-            <pointsize>20</pointsize>
-           </font>
+         <widget class="QToolBar" name="toolBarBottom">
+          <property name="windowTitle">
+           <string>toolBar</string>
           </property>
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-          <property name="placeholderText">
-           <string>Alias</string>
-          </property>
+          <addaction name="toolbarSmaller"/>
+          <addaction name="toolbarBigger"/>
+          <addaction name="separator"/>
+          <addaction name="toolbarBold"/>
+          <addaction name="separator"/>
+          <addaction name="toolbarSettings"/>
+          <addaction name="separator"/>
+          <addaction name="actionDarkMode"/>
          </widget>
         </item>
        </layout>
@@ -406,25 +507,28 @@
     <string>PRESENT</string>
    </property>
   </action>
-  <action name="toolbarEdit">
-   <property name="text">
-    <string>EDIT SONG</string>
-   </property>
-  </action>
   <action name="toolbarPrevious">
+   <property name="icon">
+    <iconset resource="../res/themes.qrc">
+     <normaloff>:/themes/black/add_left.png</normaloff>:/themes/black/add_left.png</iconset>
+   </property>
    <property name="text">
-    <string>PREVIOUS</string>
+    <string/>
    </property>
    <property name="shortcut">
-    <string>Up</string>
+    <string>Ctrl+Left</string>
    </property>
   </action>
   <action name="toolbarNext">
+   <property name="icon">
+    <iconset resource="../res/themes.qrc">
+     <normaloff>:/themes/black/add_right.png</normaloff>:/themes/black/add_right.png</iconset>
+   </property>
    <property name="text">
-    <string>NEXT</string>
+    <string/>
    </property>
    <property name="shortcut">
-    <string>Down</string>
+    <string>Ctrl+Right</string>
    </property>
   </action>
   <action name="toolbarBigger">
@@ -491,6 +595,7 @@
   </action>
  </widget>
  <resources>
+  <include location="../res/themes.qrc"/>
   <include location="../res/icons.qrc"/>
  </resources>
  <connections/>

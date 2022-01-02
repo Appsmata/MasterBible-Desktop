@@ -5,7 +5,7 @@
 
 #include "../data/app_database.h"
 #include "../data/models/book.h"
-#include "../data/models/song.h"
+#include "../data/models/verse.h"
 
 namespace Ui {
 class PresentorWindow;
@@ -37,7 +37,7 @@ private slots:
     void previousVerse();
     void nextVerse();
 
-    void presentSong();
+    void presentVerse();
     void setPresentation();
 
     void on_btnClose_clicked();
