@@ -1,0 +1,34 @@
+<RCC>
+    <qresource prefix="/">
+        <file>themes/black.qss</file>
+        <file>themes/brown.qss</file>
+        <file>themes/brown/add_bottom.png</file>
+        <file>themes/brown/add_left.png</file>
+        <file>themes/brown/add_right.png</file>
+        <file>themes/brown/add_top.png</file>
+        <file>themes/brown/branch_close.png</file>
+        <file>themes/brown/branch_open.png</file>
+        <file>themes/brown/checkbox_checked.png</file>
+        <file>themes/brown/checkbox_checked_disable.png</file>
+        <file>themes/brown/checkbox_unchecked.png</file>
+        <file>themes/brown/checkbox_unchecked_disable.png</file>
+        <file>themes/brown/radiobutton_checked.png</file>
+        <file>themes/brown/radiobutton_checked_disable.png</file>
+        <file>themes/brown/radiobutton_unchecked.png</file>
+        <file>themes/brown/radiobutton_unchecked_disable.png</file>
+        <file>themes/black/add_bottom.png</file>
+        <file>themes/black/add_left.png</file>
+        <file>themes/black/add_right.png</file>
+        <file>themes/black/add_top.png</file>
+        <file>themes/black/branch_close.png</file>
+        <file>themes/black/branch_open.png</file>
+        <file>themes/black/checkbox_checked.png</file>
+        <file>themes/black/checkbox_checked_disable.png</file>
+        <file>themes/black/checkbox_unchecked.png</file>
+        <file>themes/black/checkbox_unchecked_disable.png</file>
+        <file>themes/black/radiobutton_checked.png</file>
+        <file>themes/black/radiobutton_checked_disable.png</file>
+        <file>themes/black/radiobutton_unchecked.png</file>
+        <file>themes/black/radiobutton_unchecked_disable.png</file>
+    </qresource>
+</RCC>

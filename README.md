@@ -12,12 +12,12 @@ Controls and wizards are available for users to:
 * Switch between languages
 * Adjust font types and sizes among other display preferences
 
-## Links
+## Useful Links
 
-* Facebook: https://twitter.com/AppSmata
-* Twitter: https://twitter.com/AppSmata
-* Instagram: https://twitter.com/AppSmata
-* Website https://Appsmata.com/vSongBook
+* Get the latest Downloads: https://Appsmata.com/mBible/
+* Follow us on Facebook: https://twitter.com/AppSmata
+* Follow us on Twitter: https://twitter.com/AppSmata
+* Follow us on Instagram: https://twitter.com/AppSmata
 
 ## Releases
 

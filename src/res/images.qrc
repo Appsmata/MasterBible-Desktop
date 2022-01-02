@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>images/about.png</file>
+        <file>images/appicon.png</file>
+        <file>images/check.png</file>
+        <file>images/color.png</file>
+        <file>images/cyclic.gif</file>
+        <file>images/down_black.png</file>
+        <file>images/down_white.png</file>
+        <file>images/how.png</file>
+        <file>images/loading.gif</file>
+        <file>images/settings.png</file>
+        <file>images/sidebar.png</file>
+        <file>images/splash.png</file>
+        <file>images/up_black.png</file>
+        <file>images/up_white.png</file>
+    </qresource>
+</RCC>

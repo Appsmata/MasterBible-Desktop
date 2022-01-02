@@ -1,25 +1,17 @@
-#include "Application.h"
-#include "AsBase.h"
-#include "AsUtils.h"
-
+#include <QApplication>
 #include <QFile>
 #include <QSplashScreen>
 #include <QThread>
 
-void setStyle(const QString& qssFile)
-{
-    QFile qss(qssFile);
-    qss.open(QFile::ReadOnly);
-    qApp->setStyleSheet(qss.readAll());
-    qss.close();
-}
+#include "data/app_database.h"
+#include "utils/app_utils.h"
+#include "utils/pref_utils.h"
+#include "ui/home_window.h"
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
-	AsBase::WriteLogs("Events", "App Started, MainWindow opened", "", "");
-
-	QApplication app(argc, argv);
-    QPixmap pixmap("res/splash.png");
+    QApplication app(argc, argv);
+    QPixmap pixmap("res/images/splash.png");
     QSplashScreen splash(pixmap, Qt::WindowStaysOnTopHint);
     splash.show();
 
@@ -27,6 +19,23 @@ int main(int argc, char** argv)
     app.processEvents();
     splash.close();
 
-    Application vsb(argc, argv);
-    return vsb.exec();
+    //Check if database exists otherwise create it
+    AppDatabase* appDb = new AppDatabase();
+    appDb->checkDatabase();
+
+    QSettings preferences(AppUtils::appName(), AppUtils::orgDomain());
+
+    if (!preferences.value(PrefUtils::prefsFirstInstall()).toBool())
+    {
+        QCoreApplication::setApplicationName(AppUtils::appName());
+        QCoreApplication::setApplicationVersion(AppUtils::appVersion());
+        QCoreApplication::setOrganizationName(AppUtils::orgName());
+        QCoreApplication::setOrganizationDomain(AppUtils::orgDomain());
+
+        PrefUtils::defaultPrefs();
+    }
+
+    HomeWindow home;
+    home.showMaximized();
+    return app.exec();
 }
